@@ -1,0 +1,10 @@
+{% extends "contactos_base.html" %}
+
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>¿Desea eliminar "{{ object }}" de su lista de contactos?</h3> 
+    <input class="ui red submit button"  type="submit" value="Confirmar">
+</form>
+{% endblock content %}

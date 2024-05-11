@@ -1,0 +1,38 @@
+{% extends "contactos_base.html" %}
+
+{% block content %}
+
+  <div class="ui ">
+      {% comment %} <div class="ui icon input">
+        <input type="text" placeholder="Search a very wide input...">
+        <i class="search icon"></i>
+      </div> {% endcomment %}
+      <a href="{% url 'contacto_create' %}">
+        <button class="circular ui right floated  icon green button">
+          <i class="icon add" ></i>
+        </button>
+      </a>
+  </div>
+  <table class="ui compact table">
+    <thead>
+      <tr>
+        {% for header in headers %}
+          <th>{{header}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for contacto in contactos%}
+      <tr>
+        <td>{{contacto.nombre}}</td>
+        <td>{{contacto.telefono}}</td>
+        <td>
+          <a href="{% url 'contacto_detail' pk=contacto.id %}"><i class="icon grey eye"></i></a>
+          <a href="{% url 'contacto_update' pk=contacto.id %}"><i class="icon blue edit"></i></a>
+          <a href="{% url 'contacto_delete' pk=contacto.id %}"><i class="icon red trash"></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

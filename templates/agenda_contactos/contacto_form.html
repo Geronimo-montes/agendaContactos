@@ -1,0 +1,30 @@
+{% extends "contactos_base.html" %}
+
+{% block content %}
+
+<div class="ui form">
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="field">
+      <label>{{ form.nombre.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.nombre }}
+        <i class="user icon"></i>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>{{ form.telefono.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.telefono }}
+        <i class="phone icon"></i>
+      </div>
+    </div>
+    <input class="ui blue submit button"  type="submit" value="Agregar">
+    <h1>{{form.acction}}</h1>
+    {% comment %} <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
+  </form>
+</div>
+
+{% endblock content %}

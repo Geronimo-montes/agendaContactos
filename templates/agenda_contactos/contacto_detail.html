@@ -1,0 +1,38 @@
+{% extends "contactos_base.html" %}
+
+{% block content %}
+
+  <div class="ui content">
+    <a href="{% url 'contacto_list' %}">
+      <button class="circular ui left  icon button">
+        <i class="icon chevron left" ></i>
+      </button>
+    </a>
+  </div>
+  
+  <div class="ui card">
+    <div class="content">
+      <div class="header">
+        <h1>
+          <i class="user circle icon masive"></i>
+          {{contacto.nombre}}
+        </h1>
+        <a href="{% url 'contacto_delete' pk=contacto.id %}">
+          <button class="circular ui right floated icon button">
+            <i class="icon trash red" ></i>
+          </button>
+        </a>
+        <a href="{% url 'contacto_update' pk=contacto.id %}">
+          <button class="circular ui right floated icon button">
+            <i class="icon edit blue" ></i>
+          </button>
+        </a>
+        </div>
+
+        <div class="ui horizontal divider">.</div>
+        <div class="extra content">
+            <i class="phone  icon"></i>
+            {{contacto.telefono}}
+        </div>
+    </div>
+{% endblock content %}  
