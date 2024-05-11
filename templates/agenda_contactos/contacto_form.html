@@ -7,10 +7,34 @@
     {% csrf_token %}
 
     <div class="field">
+      <label>{{ form.subfijo.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.subfijo }}
+        <i class="user icon"></i>
+      </div>
+    </div>
+
+    <div class="field">
       <label>{{ form.nombre.label_tag }}</label>
       <div class="ui left icon input">
         {{ form.nombre }}
         <i class="user icon"></i>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>{{ form.apellido.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.apellido }}
+        <i class="user icon"></i>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>{{ form.correo.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.correo }}
+        <i class="envelope icon"></i>
       </div>
     </div>
 
@@ -21,6 +45,15 @@
         <i class="phone icon"></i>
       </div>
     </div>
+    
+    <div class="field">
+      <label>{{ form.direccion.label_tag }}</label>
+      <div class="ui left icon input">
+        {{ form.direccion }}
+        <i class="address card icon"></i>
+      </div>
+    </div>
+
     <input class="ui blue submit button"  type="submit" value="Guardar">
     <h1>{{form.acction}}</h1>
     {% comment %} <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}

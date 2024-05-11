@@ -33,8 +33,8 @@ class ContactoDetailView(DetailView, LoginRequiredMixin):
     
 class ContactoCreateView(CreateView, LoginRequiredMixin):
     model = Contacto
-    fields = ["nombre", "telefono"]
-
+    fields = ["subfijo", "nombre", "apellido", "correo", "telefono",  "direccion", ]    
+    
     def form_valid(self, form):
         form.instance.user = self.request.user
         print(form.as_p)
@@ -44,13 +44,13 @@ class ContactoCreateView(CreateView, LoginRequiredMixin):
 class ContactoUpdateView(UpdateView, LoginRequiredMixin):
     model = Contacto
     success_url = "/agenda/lista/"
-    fields = ["nombre", "telefono"]
+    fields = ["subfijo", "nombre", "apellido", "correo", "telefono",  "direccion", ]    
     
     
 class ContactoDeleteView(DeleteView, LoginRequiredMixin):
     model = Contacto
     success_url ="/agenda/lista/"
-    fields = ["nombre", "telefono"]
+    fields = ["subfijo", "apodo", "nombre", "apellido", "correo", "telefono", "telefono_trabajo", "direccion", "direccion_trabajo", ] 
 
 
 

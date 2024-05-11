@@ -13,10 +13,11 @@
   <div class="ui card">
     <div class="content">
       <div class="header">
-        <h1>
+        <h3>
           <i class="user circle icon masive"></i>
+          <b>{{contacto.subfijo}}</b>
           {{contacto.nombre}}
-        </h1>
+        </h3>
         <a href="{% url 'contacto_delete' pk=contacto.id %}">
           <button class="circular ui right floated icon button">
             <i class="icon trash red" ></i>
@@ -27,12 +28,18 @@
             <i class="icon edit blue" ></i>
           </button>
         </a>
-        </div>
+      </div>
 
-        <div class="ui horizontal divider">.</div>
-        <div class="extra content">
-            <i class="phone  icon"></i>
-            {{contacto.telefono}}
-        </div>
+      <div class="ui horizontal divider">.</div>
+      <br>
+      <div   class="extra content">
+        <p><i class="user  icon"></i>{{contacto.subfijo}} {{contacto.nombre}} {{contacto.apellido}}</p>
+        <p><i class="phone  icon"></i>{{contacto.telefono}}</p>
+        <p><i class="address card  icon"></i>{{contacto.direccion}}</p>
+        
+      </div>
+      <div class="extra content"> 
+      </div>
     </div>
+  </div>
 {% endblock content %}  
