@@ -6,5 +6,6 @@
     {% csrf_token %}
     <h3>¿Desea eliminar "{{ object }}" de su lista de contactos?</h3> 
     <input class="ui red submit button"  type="submit" value="Confirmar">
+    <a class="ui blue submit button" href="{% url 'contacto_list' %}">Cancelar</a>
 </form>
 {% endblock content %}
